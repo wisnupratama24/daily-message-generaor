@@ -1,5 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-// router.post("/register", validRegister, registerController);
+const {
+  scrapeRetweetTwitter,
+  getDream,
+} = require("../controllers/DailyController");
+
+router.get("/scrape", scrapeRetweetTwitter);
+router.get("/getDream", getDream);
+
 module.exports = router;

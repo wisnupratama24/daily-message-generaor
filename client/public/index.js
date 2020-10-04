@@ -9,7 +9,7 @@ const clearButton = document.querySelector("#clear-dreams");
 const linkButton = document.querySelector("#view");
 
 // request the dreams from our app's sqlite database
-fetch("/getDream")
+fetch("http://localhost:4000/api/getDream")
   .then((res) => res.json())
   .then((response) => {
     console.log(response);
@@ -31,7 +31,7 @@ const changeSource = (permalink) => {
 };
 
 clearButton.addEventListener("click", (event) => {
-  fetch("/getDream", {})
+  fetch("http://localhost:4000/api/getDream", {})
     .then((res) => res.json())
     .then((response) => {
       dreamsList.innerHTML = "";
